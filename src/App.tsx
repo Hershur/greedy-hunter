@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import './App.scss';
 import GameStartPage from './components/pages/GameStartPage';
 import GameOverPage from './components/pages/GameOverPage';
@@ -13,11 +13,12 @@ function App() {
   const hasStartedGame = useSelector<IStateProps, IStateProps["startedGame"]>((state)=> state.startedGame);
   
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Switch>
+            {/* <Route path="/"  component={GameStartPage} /> */}
           
-            <Route exact path="/">
+            <Route exact path="/" >
               <GameStartPage />
             </Route>
            
@@ -36,7 +37,7 @@ function App() {
 
           </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
