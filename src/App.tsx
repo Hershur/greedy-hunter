@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import './App.scss';
 import GameStartPage from './components/pages/GameStartPage';
 import GameOverPage from './components/pages/GameOverPage';
@@ -13,7 +13,7 @@ function App() {
   const hasStartedGame = useSelector<IStateProps, IStateProps["startedGame"]>((state)=> state.startedGame);
   
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
         <Switch>
             {/* <Route path="/"  component={GameStartPage} /> */}
@@ -37,7 +37,7 @@ function App() {
 
           </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
