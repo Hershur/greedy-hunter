@@ -1,0 +1,50 @@
+
+.container {
+    @include flexCenter();
+    height: 100vh;
+    background: #43144A;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.game-play {
+    @include flexCenter();
+    background: url('../../assets/svgs/game-play-bg.svg') 0%;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+/* appear - on page load */
+.fade-appear {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 2000ms ease-in;
+}
+
+/* enter */
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 5000ms linear 5000ms;
+}
+
+/* exit */
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 5000ms linear;
+}
+.fade-exit-done {
+    opacity: 0;
+}
+

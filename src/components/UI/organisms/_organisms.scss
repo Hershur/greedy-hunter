@@ -1,0 +1,40 @@
+.game-details {
+    @include flexCenter();
+    flex-direction: column;
+    justify-content: normal;
+}
+
+.game-frame {
+    flex-direction: column;
+    background: white;
+    background-blend-mode: soft-light;
+    border-radius: 10px;
+    padding: 30px
+}
+
+.col {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.box {
+    @include flexCenter();
+    border-right: 1.5px solid #853594;
+    border-bottom: 1.5px solid #853594;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    user-select: none;
+}
+
+.col .box:last-of-type {
+    width: 42px;
+    border-right: none;
+}
+
+.game-board .col:last-of-type div {
+    border-bottom: none;
+}

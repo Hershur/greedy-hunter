@@ -1,0 +1,46 @@
+.heading {
+    @include flexCenter();
+    flex-direction: column;
+    img {
+        width: 160px;
+        border-radius: 0px;
+    }
+}
+
+.game-grid {
+    @include flexCenter();
+    margin: 15px;
+}
+
+.frame {
+    @include flexJustify();
+}
+
+.game-board {
+    margin: 20px;
+    border: 3px solid #853594;
+    box-sizing: border-box;
+}
+
+.indicator-frame {
+    justify-content: space-between;
+    width: 500px;
+
+    .indicator-frame__div {
+        display: flex;
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 170px;
+    }
+}
+
+.moves-frame {
+    @include flexJustify();
+    width: 500px;
+
+    .moves-frame__div {
+        display: flex;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+}

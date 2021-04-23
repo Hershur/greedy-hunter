@@ -1,0 +1,12 @@
+.game-start-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.bg-mesh {
+    img {
+        height: 500px;
+        width: 300px;
+        border-radius: 0px;
+    }
+}
