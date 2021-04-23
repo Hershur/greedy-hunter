@@ -13,7 +13,7 @@ function App() {
   const hasStartedGame = useSelector<IStateProps, IStateProps["startedGame"]>((state)=> state.startedGame);
   
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
         <Switch>
           
@@ -36,7 +36,7 @@ function App() {
 
           </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
