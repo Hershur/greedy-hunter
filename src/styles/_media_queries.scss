@@ -40,22 +40,27 @@
         width: 32px;
     }
 
-    .game-frame {
-        padding: 20px;
-        width: 100%;
-    }
-
-    .indicator-frame {
-        width: 100%;
-    }
 
     .indicator-frame .indicator-frame__div {
         font-size: 12px;
         width: 33%;
     }
 
+    
+
+}
+
+@media screen and (max-width: 500px) {
     .moves-frame {
         width: 100%;
     }
-
+    
+    .game-frame {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .indicator-frame {
+        width: 100%;
+    }
 }

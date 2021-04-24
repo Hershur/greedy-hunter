@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import assets from "../../../common/assets";
 import { calculateNextMove, isBoxEmpty, play, randomFoodAndCharacter } from "../../../common/utils";
@@ -6,7 +6,6 @@ import moveCharacter  from "../../../common/moveCharacter";
 import {IStateProps} from '../../../reducers/rootReducer';
 import { useHistory } from "react-router-dom";
 import Box from "./Box";
-import ReactDOM from "react-dom";
 
 
 
@@ -16,6 +15,7 @@ function GridBoxes(): JSX.Element {
 
     let allFoods = 0;
 
+    const [emptyBox, setEmptyBox] = useState("");
     const gridValue: number = useSelector<IStateProps, IStateProps["grid"]>((state)=> state.grid);
 
     const dispatch = useDispatch();
@@ -45,6 +45,8 @@ function GridBoxes(): JSX.Element {
             }
 
             moveCharacter(event.currentTarget.id, positionChar);
+
+            (document.getElementById(positionChar) as any).innerHTML = emptyBox;
             
             
             positionChar = event.currentTarget.id;

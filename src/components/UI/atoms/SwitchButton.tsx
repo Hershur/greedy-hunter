@@ -1,25 +1,28 @@
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { IStateProps } from "../../../reducers/rootReducer";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { IStateProps } from "../../../reducers/rootReducer";
+
 
 
 function SwitchButton(): JSX.Element {
-    let gameSound = false;
-    // const dispatch = useDispatch();
+    const gameSound: boolean = useSelector<IStateProps, IStateProps["gameSound"]>((state)=> state.gameSound);
+
+    const [sound, setSound] = useState(gameSound);
+    const dispatch = useDispatch();
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-        gameSound = e.currentTarget.checked;
-        console.log('game sound', e.currentTarget.checked);
+        setSound(e.currentTarget.checked);
+        dispatch({type: "TOGGLE_SOUND", payload: sound});
+        console.log('game sound', sound);
     }
-    console.log('game sound', gameSound);
+    
 
 
 
     return (
         <div>
-            <input onChange={handleChange} defaultChecked={gameSound} type="checkbox" id="switch" />
-            <label className="label" htmlFor="switch" title={gameSound ? "Off Game Sound" : "On Game Sound"}>
+            <input onChange={handleChange} defaultChecked={sound} type="checkbox" id="switch" />
+            <label className="label" htmlFor="switch" title={sound ? "Off Game Sound" : "On Game Sound"}>
             </label>
 
         </div>

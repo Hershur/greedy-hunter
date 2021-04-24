@@ -8,6 +8,7 @@ export interface IStateProps {
     totalMoves: number,
     totalFoods: number,
     foodsEaten: number,
+    gameSound: boolean,
 }
 
 type Action = {type: string, payload: any } 
@@ -21,6 +22,7 @@ const initialState = {
     totalMoves: 0,
     totalFoods: 0,
     foodsEaten: 0,
+    gameSound: false,
 } 
  
 const rootReducer = (state: IStateProps = initialState, action: Action)=>{
@@ -37,6 +39,8 @@ const rootReducer = (state: IStateProps = initialState, action: Action)=>{
             return {...state, totalFoods: action.payload}
         case "FOODS_EATEN":
             return {...state, foodsEaten: action.payload}
+        case "TOGGLE_SOUND":
+            return {...state, gameSound: action.payload}
         default:
             return state;
     }
