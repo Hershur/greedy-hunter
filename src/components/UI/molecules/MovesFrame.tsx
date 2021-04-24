@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { IStateProps } from "../../../reducers/rootReducer";
 import Moves from "../atoms/Moves";
+import SwitchButton from "../atoms/SwitchButton";
 
 function MovesFrame(): JSX.Element{
     const gridValue: number = useSelector<IStateProps, IStateProps["grid"]>((state)=> state.grid);
@@ -10,6 +11,7 @@ function MovesFrame(): JSX.Element{
     return (
         <div className="frame moves-frame">
             <Moves numberOfMoves={maxMoves} moveDescription="Maximum moves" />
+            {/* <SwitchButton /> */}
             <Moves numberOfMoves={totalMoves} moveDescription="Total moves" />
         </div>
     );

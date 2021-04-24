@@ -6,6 +6,7 @@ import moveCharacter  from "../../../common/moveCharacter";
 import {IStateProps} from '../../../reducers/rootReducer';
 import { useHistory } from "react-router-dom";
 import Box from "./Box";
+import ReactDOM from "react-dom";
 
 
 
@@ -25,6 +26,7 @@ function GridBoxes(): JSX.Element {
     
     const handleClick = (event: MouseEvent)=> {
         event.preventDefault();
+
         const { target } = event;
         // let previous = positionChar;
         console.log("previous id", positionChar);

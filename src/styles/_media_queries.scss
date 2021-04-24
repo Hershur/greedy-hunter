@@ -1,0 +1,61 @@
+@media screen and (max-width: 1100px)  {
+    .container, .game-play {
+        overflow: hidden;
+    }
+
+    .game-play {
+        background-position-x: 100%;
+    }
+
+    .heading-text {
+        font-size: 40px;
+        margin: 0px;
+    }
+
+    .game-text {
+        font-size: 13px;
+        line-height: 25px;
+    }
+    
+    .game-grid {
+        flex-direction: column;
+    }
+
+    .game-grid-text { 
+        padding-right: 0px;
+    }
+
+    .button {
+        font-size: 17px;
+        padding: 10px;
+        height: 45px;
+    }
+
+    .box { 
+        width: 30px;
+        height: 30px;
+    }
+    
+    .col .box:last-of-type {
+        width: 32px;
+    }
+
+    .game-frame {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .indicator-frame {
+        width: 100%;
+    }
+
+    .indicator-frame .indicator-frame__div {
+        font-size: 12px;
+        width: 33%;
+    }
+
+    .moves-frame {
+        width: 100%;
+    }
+
+}

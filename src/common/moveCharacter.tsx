@@ -22,8 +22,8 @@ export default function moveCharacter(newCharPosition: string, characterPosition
     
     // charElement.innerHTML = "";
     if ((document.getElementById(characterPositionId) as any).childNodes.length > 0) {
-
-        (document.getElementById(characterPositionId) as any).replaceChildren();
+        // (document.getElementById(characterPositionId) as any).replaceChildren();
+        (document.getElementById(characterPositionId) as any).innerHTML = "";
     }
     
 

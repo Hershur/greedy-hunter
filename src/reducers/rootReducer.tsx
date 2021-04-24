@@ -15,7 +15,7 @@ type Action = {type: string, payload: any }
 const initialState = {
     grid: 5,
     minGridValue: 5,
-    maxGridValue: 12,
+    maxGridValue: window.screen.width < 400 ? 10 : 12,
     startedGame: false,
     timeSpent: 0,
     totalMoves: 0,

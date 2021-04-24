@@ -8,7 +8,7 @@ function GridInputField(): JSX.Element {
     const gridValue: number = useSelector<IStateProps, IStateProps["grid"]>((state)=> state.grid);
     const dispatch =  useDispatch();
 
-    const handlechange = (event: React.ChangeEvent<HTMLInputElement>)=>{
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
         let gridInputValue = +(event.target.value);
 
         dispatch({type:"UPDATE_GRID", payload: gridInputValue});
@@ -24,7 +24,7 @@ function GridInputField(): JSX.Element {
     }
 
     return (
-        <input onChange={handlechange} className="grid-input" type="number" min="5" max="12" defaultValue={gridValue} />
+        <input onInput={handleInputChange} className="grid-input" min={minGridValue} max={maxGridValue} type="number" defaultValue={gridValue} />
     );
 }
 
