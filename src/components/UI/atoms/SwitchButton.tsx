@@ -13,7 +13,7 @@ function SwitchButton(): JSX.Element {
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         setSound(e.currentTarget.checked);
         dispatch({type: "TOGGLE_SOUND", payload: sound});
-        console.log('game sound', sound);
+        //console.log('game sound', sound);
     }
     
 

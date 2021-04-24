@@ -29,12 +29,12 @@ function GridBoxes(): JSX.Element {
 
         const { target } = event;
         // let previous = positionChar;
-        console.log("previous id", positionChar);
+        //console.log("previous id", positionChar);
 
         
         
-        console.log("current id", event.currentTarget.id);
-        console.log("position", positionChar);
+        //console.log("current id", event.currentTarget.id);
+        //console.log("position", positionChar);
         if (target){
             
             
@@ -50,17 +50,17 @@ function GridBoxes(): JSX.Element {
             
             
             positionChar = event.currentTarget.id;
-            // console.log(getCharacterPosition(boxElements));
+            // //console.log(getCharacterPosition(boxElements));
             // dispatch({type:"COUNT_MOVES", payload: 5});
             moves++;
-            console.log("moves",moves);
-            console.log("foods",foods);
+            //console.log("moves",moves);
+            //console.log("foods",foods);
 
             // props.movesFoodFunction({foods: foods, moves: moves});
             // const counting = dispatch({type: "COUNT_MOVES", payload: totalMoves});
-            // console.log(getCharacterPosition(boxElements));
+            // //console.log(getCharacterPosition(boxElements));
             // e.currentTarget.innerHTML = `<img src=${assets.character} class="img" alt="character" />`;
-            // console.log(e.currentTarget.id);
+            // //console.log(e.currentTarget.id);
 
 
         }
@@ -124,7 +124,7 @@ function GridBoxes(): JSX.Element {
         }, 300);
 
         dispatch({type:"TOTAL_FOODS", payload: allFoods})
-        console.log(allFoods);
+        //console.log(allFoods);
     });
     
     

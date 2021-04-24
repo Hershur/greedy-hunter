@@ -109,8 +109,8 @@ export function isBoxEmpty(elemId: string): boolean{
         //play munching sound
         play('https://freesound.org/data/previews/467/467610_9659530-lq.mp3');
         
-        // console.log("remaining food", countFoodBoxes);
-        // console.log("total", totalFoodBoxes);
+        // //console.log("remaining food", countFoodBoxes);
+        // //console.log("total", totalFoodBoxes);
         return true
     } 
     return false;
@@ -130,7 +130,7 @@ export function calculateNextMove(newCharElemId: string, characterPositionId: st
     let left = [characterPosition[0],(+characterPosition[1]-1)+""];
     possibleMoves = [upward,downward,right,left];
 
-    // console.log(possibleMoves);
+    // //console.log(possibleMoves);
 
     let moveCheck = possibleMoves.map(move=> JSON.stringify(move) === JSON.stringify(newCharacterPosition));
 
@@ -156,12 +156,12 @@ export function setElementId(arr:string[],i:number){
 
 export function getCharacterPosition(arr: NodeListOf<Element>): string{
     for(let i=0; i<arr.length; i++){
-        console.log("yeyeye",arr[i]);
+        //console.log("yeyeye",arr[i]);
         if(arr[i].innerHTML.includes("character")){
             return "";
         }
     }
-    console.log(arr);
+    //console.log(arr);
     return ""
 }
 

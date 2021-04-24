@@ -35,7 +35,7 @@ export default function moveCharacter(newCharPosition: string, characterPosition
         att2.value = 'img';
         node.setAttributeNode(att); 
         node.setAttributeNode(att2); 
-        (newCharElement as any).replaceChildren();
+        (newCharElement as any).innerHTML = "";
         newCharElement.insertAdjacentElement("beforeend", node);
         // newCharElement.innerHTML = `<img src=${assets.character} alt="character" class="img" />`;
     }
