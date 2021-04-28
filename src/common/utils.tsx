@@ -100,6 +100,7 @@ function gridPattern({grid,box,character,food}: IGridPatternParams): string[][]{
 export const play = (audioFile: string): void=>{
     let audio = new Audio(audioFile);
     audio.play();
+    audio.preload = 'auto';
 }
 
 export function isBoxEmpty(elemId: string): boolean{
