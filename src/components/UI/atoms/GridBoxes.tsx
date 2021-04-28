@@ -11,7 +11,7 @@ import Box from "./Box";
 
 
 
-function GridBoxes(): JSX.Element {
+const GridBoxes = (): JSX.Element => {
 
     let allFoods = 0;
 
