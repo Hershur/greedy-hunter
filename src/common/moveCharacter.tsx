@@ -17,27 +17,18 @@ export default function moveCharacter(newCharPosition: string, characterPosition
     
    
     // charElement.querySelectorAll('*').forEach( n => n.remove() );
-    
-    
-    
-    // charElement.innerHTML = "";
-    if ((document.getElementById(characterPositionId) as any).childNodes.length > 0) {
-        // (document.getElementById(characterPositionId) as any).replaceChildren();
-        // (document.getElementById(characterPositionId) as any).innerHTML = "";
-    }
-    
 
     if(newCharElement){
-        let node = document.createElement("img");
-        let att = document.createAttribute("src");
-        let att2 = document.createAttribute("class");
-        att.value = `${assets.character}`;
-        att2.value = 'img';
-        node.setAttributeNode(att); 
-        node.setAttributeNode(att2); 
-        (newCharElement as any).innerHTML = "";
-        newCharElement.insertAdjacentElement("beforeend", node);
-        // newCharElement.innerHTML = `<img src=${assets.character} alt="character" class="img" />`;
+        // let node = document.createElement("img");
+        // let att = document.createAttribute("src");
+        // let att2 = document.createAttribute("class");
+        // att.value = `${assets.character}`;
+        // att2.value = 'img';
+        // node.setAttributeNode(att); 
+        // node.setAttributeNode(att2); 
+        // (newCharElement as any).innerHTML = "";
+        // newCharElement.insertAdjacentElement("beforeend", node);
+        newCharElement.innerHTML = `<img src=${assets.character} alt="character" class="img" />`;
     }
 
 

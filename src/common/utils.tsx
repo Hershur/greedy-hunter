@@ -109,8 +109,7 @@ export function isBoxEmpty(elemId: string): boolean{
         //play munching sound
         play('https://freesound.org/data/previews/467/467610_9659530-lq.mp3');
         
-        // //console.log("remaining food", countFoodBoxes);
-        // //console.log("total", totalFoodBoxes);
+        
         return true
     } 
     return false;
@@ -144,26 +143,6 @@ export function calculateNextMove(newCharElemId: string, characterPositionId: st
     
 }
 
-export function setElementId(arr:string[],i:number){
-    let insertedID = arr.map((el, index)=> {
-      el = el.substr(0,4)+ ` id="id_${i}_${index}" `+el.substr(4);
-      return el;
-    });
-    
-    return insertedID;
-}
-
-
-export function getCharacterPosition(arr: NodeListOf<Element>): string{
-    for(let i=0; i<arr.length; i++){
-        //console.log("yeyeye",arr[i]);
-        if(arr[i].innerHTML.includes("character")){
-            return "";
-        }
-    }
-    //console.log(arr);
-    return ""
-}
 
 
 export default gridPattern;

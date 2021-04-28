@@ -16,6 +16,7 @@ function GridBoxes(): JSX.Element {
     let allFoods = 0;
 
     const [emptyBox, setEmptyBox] = useState("");
+    const [character, setCharacter] = useState(assets.character);
     const gridValue: number = useSelector<IStateProps, IStateProps["grid"]>((state)=> state.grid);
 
     const dispatch = useDispatch();
@@ -44,7 +45,8 @@ function GridBoxes(): JSX.Element {
                 foods++;
             }
 
-            moveCharacter(event.currentTarget.id, positionChar);
+            
+            moveCharacter(event.currentTarget.id, character);
 
             (document.getElementById(positionChar) as any).innerHTML = emptyBox;
             
