@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import './App.scss';
 import GameStartPage from './components/pages/GameStartPage';
 import GameOverPage from './components/pages/GameOverPage';

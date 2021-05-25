@@ -15,9 +15,10 @@ const GridBoxes = (): JSX.Element => {
 
     let allFoods = 0;
 
-    const [emptyBox, setEmptyBox] = useState("");
-    const [character, setCharacter] = useState(assets.character);
+    const [emptyBox] = useState("");
+    const [character] = useState(assets.character);
     const gridValue: number = useSelector<IStateProps, IStateProps["grid"]>((state)=> state.grid);
+    const gameSound: boolean = useSelector<IStateProps, IStateProps["gameSound"]>((state)=> state.gameSound);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -32,10 +33,6 @@ const GridBoxes = (): JSX.Element => {
         // let previous = positionChar;
         //console.log("previous id", positionChar);
 
-        
-        
-        //console.log("current id", event.currentTarget.id);
-        //console.log("position", positionChar);
         if (target){
             
             
@@ -55,15 +52,6 @@ const GridBoxes = (): JSX.Element => {
             // //console.log(getCharacterPosition(boxElements));
             // dispatch({type:"COUNT_MOVES", payload: 5});
             moves++;
-            //console.log("moves",moves);
-            //console.log("foods",foods);
-
-            // props.movesFoodFunction({foods: foods, moves: moves});
-            // const counting = dispatch({type: "COUNT_MOVES", payload: totalMoves});
-            // //console.log(getCharacterPosition(boxElements));
-            // e.currentTarget.innerHTML = `<img src=${assets.character} class="img" alt="character" />`;
-            // //console.log(e.currentTarget.id);
-
 
         }
         
@@ -98,16 +86,16 @@ const GridBoxes = (): JSX.Element => {
                 clearInterval(m);
 
                 history.push("/over");
-                play("https://freesound.org/data/previews/175/175409_1326576-lq.mp3");
+                gameSound && play("https://freesound.org/data/previews/175/175409_1326576-lq.mp3");
                 
             } 
             //Check if all foods have been eaten
-            if(foods === allFoods){
+            else if(foods === allFoods){
                 clearInterval(t);
                 clearInterval(m);
 
                 history.push("/finished");
-                play("https://freesound.org/data/previews/258/258142_4631294-lq.mp3");
+                gameSound && play("https://freesound.org/data/previews/258/258142_4631294-lq.mp3");
 
             }
         }, 1000);
@@ -118,13 +106,14 @@ const GridBoxes = (): JSX.Element => {
                 clearInterval(m);
 
                 history.push("/over");
-                play("https://freesound.org/data/previews/175/175409_1326576-lq.mp3");
+                gameSound && play("https://freesound.org/data/previews/175/175409_1326576-lq.mp3");
             }
 
             dispatch({type:"COUNT_MOVES", payload: moves});
             dispatch({type:"FOODS_EATEN", payload: foods});
         }, 300);
 
+        //Sends total number of foods to store
         dispatch({type:"TOTAL_FOODS", payload: allFoods})
         //console.log(allFoods);
     });

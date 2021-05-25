@@ -22,7 +22,7 @@ const initialState = {
     totalMoves: 0,
     totalFoods: 0,
     foodsEaten: 0,
-    gameSound: false,
+    gameSound:  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? false : true,
 } 
  
 const rootReducer = (state: IStateProps = initialState, action: Action)=>{
